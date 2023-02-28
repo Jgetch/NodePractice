@@ -41,4 +41,10 @@ console.log(fileReadAsync);
 //insansiating emitter object
 const emitter = new EventEmitter(); // OBECT OF EMITTER
 
-emitter.emit("message logged"); // signalling an event has happened
+//registering a listener
+emitter.on("messageLogged", function () {
+  console.log("Listener Called.");
+});
+
+//raising an event
+emitter.emit("messageLogged"); // signalling an event has happened
