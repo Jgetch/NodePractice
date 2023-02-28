@@ -43,8 +43,19 @@ const emitter = new EventEmitter(); // OBECT OF EMITTER
 
 //registering a listener
 emitter.on("messageLogged", function () {
+  //this does not call an argument, and uses standard function syntax
   console.log("Listener Called.");
+});
+
+//registering another listener
+emitter.on("messageWithArgs", (arg) => {
+  //call an argument with 'arg' and uses an arrow function
+
+  console.log("The arguments are: ", arg);
 });
 
 //raising an event
 emitter.emit("messageLogged"); // signalling an event has happened
+
+//raising another event with event arguments
+emitter.emit("messageWithArgs", { id: 1, url: "http://www.google.com" }); // signalling an event has happened
