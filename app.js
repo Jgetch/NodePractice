@@ -59,3 +59,4 @@ emitter.emit("messageLogged"); // signalling an event has happened
 
 //raising another event with event arguments
 emitter.emit("messageWithArgs", { id: 1, url: "http://www.google.com" }); // signalling an event has happened
+//.
